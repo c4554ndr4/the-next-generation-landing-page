@@ -442,6 +442,123 @@
             gap: 20px;
         }
         
+        .contact-form {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .contact-form.show {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid #fecaca;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.7);
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-form.show .modal-content {
+            transform: scale(1);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            color: #ef4444;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #f0ede6;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ef4444;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .submit-button {
+            background-color: #ef4444;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .submit-button:hover {
+            background-color: #dc2626;
+            transform: translateY(-1px);
+        }
+        
+        .form-success {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            color: #166534;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
         .clearfix::after {
             content: "";
             clear: both;
@@ -488,6 +605,11 @@
                 width: 80%;
                 max-width: 300px;
             }
+            
+            .modal-content {
+                width: 95%;
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -502,6 +624,7 @@
                 <div class="nav-links">
                     <a href="index.html">Home</a>
                     <a href="about.html">About</a>
+                    <a href="#contact">Contact</a>
                     <a href="#download" class="cta-button-nav">Download Now</a>
                 </div>
             </nav>
@@ -519,13 +642,13 @@
         <div class="container">
             <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">Download Scout Browser</h2>
             <div class="download-buttons">
-                <a href="@https://github.com/c4554ndr4/KidBrowser-Releases/releases/latest/download/kidbrowser-latest-mac.dmg" class="download-button mac">
+                <a href="https://github.com/c4554ndr4/KidBrowser-Releases/releases/latest/download/kidbrowser-latest-mac.dmg" class="download-button mac">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.85 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" fill="currentColor"/>
                     </svg>
                     Download for Mac
                 </a>
-                <a href="@https://github.com/c4554ndr4/KidBrowser-Releases/releases/latest/download/kidbrowser-latest-setup.exe" class="download-button windows">
+                <a href="https://github.com/c4554ndr4/KidBrowser-Releases/releases/latest/download/kidbrowser-latest-setup.exe" class="download-button windows">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3 5.45L9.88 4.5V11.47H3V5.45ZM21 4L9.88 5.32V11.47H21V4ZM3 12.55H9.88V19.5L3 18.55V12.55ZM9.88 18.68L21 20V12.55H9.88V18.68Z" fill="currentColor"/>
                     </svg>
@@ -642,5 +765,97 @@
             </div>
         </div>
     </section>
+    
+    <!-- Contact Modal -->
+    <div class="contact-form" id="contact-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <h2 style="text-align: center; color: #ef4444; margin-bottom: 30px;">Send us a Message</h2>
+            
+            <form action="https://formspree.io/f/myzjyzln" method="POST">
+                <div class="form-success" id="form-success">
+                    ✅ Thank you for your message! We'll get back to you soon.
+                </div>
+                
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="_replyto" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your experience with Scout Browser, ask questions, or share suggestions..." required></textarea>
+                </div>
+                
+                <input type="hidden" name="_subject" value="New message from Scout Browser website">
+                <input type="hidden" name="_to" value="cassandra@melax.com">
+                
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+    </div>
 </body>
+<script>
+// Handle contact modal and form submission
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('contact-modal');
+    const form = modal.querySelector('form');
+    const successMessage = document.getElementById('form-success');
+    const contactNavLink = document.querySelector('a[href="#contact"]');
+    const closeBtn = document.getElementById('modal-close');
+    
+    // Open modal when clicking nav contact link
+    contactNavLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    });
+    
+    // Close modal function
+    function closeModal() {
+        modal.classList.remove('show');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+    
+    // Close modal on close button click
+    closeBtn.addEventListener('click', closeModal);
+    
+    // Close modal on backdrop click
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+    
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('show')) {
+            closeModal();
+        }
+    });
+    
+    // Handle form submission
+    form.addEventListener('submit', function(e) {
+        // Let the form submit normally to Formspree
+        // Show success message after a brief delay
+        setTimeout(function() {
+            successMessage.style.display = 'block';
+            form.reset();
+            
+            // Scroll to success message within modal
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 1000);
+    });
+});
+</script>
 </html> 
