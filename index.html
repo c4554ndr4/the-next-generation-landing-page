@@ -53,8 +53,8 @@
         }
         
         .logo-image {
-            width: 40px;
-            height: 40px;
+            width: 80px;
+            height: 80px;
             border-radius: 8px;
         }
         
@@ -96,8 +96,35 @@
             background-color: #dc2626;
         }
         
-        .hero-section {
+        .banner-wrapper {
+            background-image: url('assets/banner.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
             background-color: #fffdf9;
+            position: relative;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+        }
+        
+        .banner-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 253, 249, 0.5);
+            z-index: 1;
+        }
+        
+        .banner-wrapper > * {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-section {
+            background-color: transparent;
             padding: 60px 0;
             width: 100%;
             text-align: center;
@@ -106,7 +133,7 @@
         .hero-title {
             font-size: 48px;
             font-weight: 800;
-            color: #1a1a1a;
+            color: #000000;
             margin: 0 0 20px;
             line-height: 1.1;
         }
@@ -114,13 +141,13 @@
         .hero-subtitle {
             font-size: 18px;
             line-height: 1.6;
-            color: #666;
+            color: #000000;
             max-width: 700px;
             margin: 20px auto;
         }
         
         .download-section {
-            background-color: #fffdf9;
+            background-color: transparent;
             padding: 60px 0;
             width: 100%;
             border-bottom: 1px solid #f0ede6;
@@ -618,7 +645,7 @@
         <div class="container">
             <nav class="top-nav">
                 <div class="logo-container">
-                    <img src="icon_256.ico" alt="Scout Browser Logo" class="logo-image">
+                    <img src="assets/scout-browser-logo-transparent-background.png" alt="Scout Browser Logo" class="logo-image">
                     <div class="logo-text">Scout Browser</div>
                 </div>
                 <div class="nav-links">
@@ -631,32 +658,34 @@
         </div>
     </header>
     
-    <section class="hero-section">
-        <div class="container">
-            <h1 class="hero-title">Safe YouTube Browsing for Kids</h1>
-            <p class="hero-subtitle">Scout Browser is a dedicated YouTube browser that uses state-of-the-art AI to filter the type of content that YOU decide is appropriate and instead guide them towards the most sophisticated and incredible channels on YouTube.</p>
-        </div>
-    </section>
-    
-    <section class="download-section" id="download">
-        <div class="container">
-            <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">Download Scout Browser</h2>
-            <div class="download-buttons">
-                <a href="https://github.com/c4554ndr4/KidBrowser-Releases/releases/latest/download/kidbrowser-latest-mac.dmg" class="download-button mac">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.85 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" fill="currentColor"/>
-                    </svg>
-                    Download for Mac
-                </a>
-                <a href="https://github.com/c4554ndr4/KidBrowser-Releases/releases/latest/download/kidbrowser-latest-setup.exe" class="download-button windows">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 5.45L9.88 4.5V11.47H3V5.45ZM21 4L9.88 5.32V11.47H21V4ZM3 12.55H9.88V19.5L3 18.55V12.55ZM9.88 18.68L21 20V12.55H9.88V18.68Z" fill="currentColor"/>
-                    </svg>
-                    Download for Windows
-                </a>
+    <div class="banner-wrapper">
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="hero-title">Safe YouTube Browsing for Kids</h1>
+                <p class="hero-subtitle">Scout Browser is a dedicated YouTube browser that uses state-of-the-art AI to filter the type of content that YOU decide is appropriate and instead guide them towards the most sophisticated and incredible channels on YouTube.</p>
             </div>
-        </div>
-    </section>
+        </section>
+        
+        <section class="download-section" id="download">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">Download Scout Browser</h2>
+                <div class="download-buttons">
+                    <a href="https://github.com/c4554ndr4/KidBrowser-Releases/releases/latest/download/kidbrowser-latest-mac.dmg" class="download-button mac">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.85 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" fill="currentColor"/>
+                        </svg>
+                        Download for Mac
+                    </a>
+                    <a href="https://github.com/c4554ndr4/KidBrowser-Releases/releases/latest/download/kidbrowser-latest-setup.exe" class="download-button windows">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 5.45L9.88 4.5V11.47H3V5.45ZM21 4L9.88 5.32V11.47H21V4ZM3 12.55H9.88V19.5L3 18.55V12.55ZM9.88 18.68L21 20V12.55H9.88V18.68Z" fill="currentColor"/>
+                        </svg>
+                        Download for Windows
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
     
     <section class="ai-features">
         <div class="container">
