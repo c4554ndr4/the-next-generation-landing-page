@@ -250,9 +250,9 @@
                 <div class="nav-links">
                     <a href="index.html">Home</a>
                     <a href="about.html">About</a>
+                    <a href="scout-chat.html">Scout Chat</a>
                     <a href="demo.html" class="active">Demos</a>
                     <a href="#contact">Contact</a>
-                    <a href="#download" class="cta-button-nav">Download Now</a>
                 </div>
             </nav>
         </div>
@@ -299,12 +299,14 @@
         <div class="container">
             <div style="margin-bottom: 20px;">
                 <h3 style="color: #ef4444; margin-bottom: 15px;">Scout Browser</h3>
-                <p style="margin-bottom: 20px; color: #ccc;">A tool for parents to guide their family's YouTube experience</p>
+                <p style="margin-bottom: 20px; color: #ccc;">Empowering students and families with better digital tools</p>
             </div>
             <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; flex-wrap: wrap;">
                 <a href="privacy.html" style="color: #ef4444; text-decoration: none;">Privacy Policy</a>
                 <a href="terms.html" style="color: #ef4444; text-decoration: none;">Terms of Service</a>
                 <a href="index.html#contact" style="color: #ef4444; text-decoration: none;">Contact</a>
+                <a href="about.html" style="color: #ef4444; text-decoration: none;">About</a>
+
                 <a href="index.html" style="color: #ef4444; text-decoration: none;">Home</a>
             </div>
             <p style="margin: 0; font-size: 12px; color: #999;">© 2024 Scout Browser. All rights reserved. Scout Browser is not affiliated with YouTube or Google.</p>
@@ -325,13 +327,13 @@
             });
         }
         
-        const downloadNavLink = document.querySelector('a[href="#download"]');
+        const waitlistNavLink = document.querySelector('a[href="#contact"]');
         
-        if (downloadNavLink) {
-            downloadNavLink.addEventListener('click', function(e) {
+        if (waitlistNavLink) {
+            waitlistNavLink.addEventListener('click', function(e) {
                 e.preventDefault();
-                // Redirect to home page download section
-                window.location.href = 'index.html#download';
+                // Redirect to home page contact section
+                window.location.href = 'index.html#contact';
             });
         }
     });
